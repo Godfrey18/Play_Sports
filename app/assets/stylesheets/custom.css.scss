@@ -1,1 +1,67 @@
 @import "bootstrap";
+
+.jumbotron {
+
+background-image: asset-url('cover2.png');
+
+background-size: cover;
+
+height: 600px;
+
+}
+
+.jumbotron h1 {
+
+color: "red";
+
+text-align: center;
+
+margin:auto;
+
+letter-spacing: -1px;
+
+font-weight: bold;
+
+}
+
+
+footer {
+
+margin-top: 45px;
+
+padding-top: 5px;
+
+border-top: 1px solid #eaeaea;
+
+color: #777;
+
+}
+
+footer a:hover {
+
+color: #222;
+
+}
+
+footer small {
+
+float: left;
+
+}
+
+footer ul {
+
+float: right;
+
+list-style: none;
+
+}
+
+footer ul li {
+
+float: left;
+
+margin-left: 15px;
+
+}
+
