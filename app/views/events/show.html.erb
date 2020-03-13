@@ -1,0 +1,26 @@
+
+<div class ="container ml-5 mt-5">
+  <div class="card text-white bg-white mb-3" style="max-width: 18rem;">
+    <div class="card-header text-center text-capitalize text-dark"><%=@event.name%></div>
+    <div class="card-body">
+      <h5 class="card-title  text-dark text-left text-capitalize">
+        <small>Game:</small><%=@event.name%></h5>
+      <h5 class="card-title text-dark text-left"><small>Players:</small><%=@event.no_players%></h5>
+      <h5 class="card-title  text-dark text-left"><small>Game:</small><%=@event.types%></h5>
+      <hr>
+      <p class="card-text  text-dark text-left"><small></small><%=@event.info%>.</p>
+      <hr>
+        <div class ="form-group row">
+           <div class ="col-md-4">
+        <%=link_to "back",events_path,class:"btn btn-md btn-primary"%>
+          </div>
+          <div class ="col-md-4">
+        <%=link_to "Edit",edit_event_path(@event.id),class:"btn btn-md btn-warning"%>
+          </div>
+         <div class ="col-md-4">
+        <%=link_to "Delete",event_path(@event.id),method: :delete,class:"btn btn-md btn-danger"%>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

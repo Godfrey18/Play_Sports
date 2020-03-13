@@ -1,5 +1,12 @@
 @import "bootstrap";
 
+body{
+
+	background-image: asset-url('cover_image.png');
+	background-repeat: no-repeat;
+	background-size:cover;
+
+}
 .jumbotron {
 
 background-image: asset-url('cover2.png');
@@ -63,5 +70,8 @@ float: left;
 
 margin-left: 15px;
 
+}
+.row a:link { 
+    text-decoration:none; 
 }
 
