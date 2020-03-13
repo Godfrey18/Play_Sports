@@ -1,0 +1,26 @@
+
+<div class ="container ml-5 mt-5">
+  <div class="card text-white bg-white mb-3" style="max-width: 18rem;">
+    <div class="card-header text-center text-capitalize text-dark"><%=@teams.team_name%></div>
+    <div class="card-body">
+      <h5 class="card-title  text-dark text-left text-capitalize">
+        <small>Game:</small><%=@teams.team_name%></h5>
+      <h5 class="card-title text-dark text-left"><small>Players:</small></h5>
+      <h5 class="card-title  text-dark text-left"><small>Game:</small></h5>
+      <hr>
+      <p class="card-text  text-dark text-left"><small></small></p>
+      <hr>
+        <div class ="form-group row">
+           <div class ="col-md-4">
+        <%=link_to "back",'',class:"btn btn-md btn-primary"%>
+          </div>
+          <div class ="col-md-4">
+        <%=link_to "Edit",'',class:"btn btn-md btn-warning"%>
+          </div>
+         <div class ="col-md-4">
+        <%=link_to "Delete",'',method: :delete,class:"btn btn-md btn-danger"%>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
