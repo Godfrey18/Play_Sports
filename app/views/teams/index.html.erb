@@ -5,11 +5,11 @@
      <div class="card mt-3">
         <div class="card-body">
           <h2 class="card-title text-capitalize " ><%=team.team_name%></h5>
-          <h5 class="card-title list-inline"><%=team.id%></h5>
+          <h5 class="card-title list-inline"><%=team.users.count%></h5>
            <hr>
-           <%= link_to 'view',team_path(team),class:"btn btn-sm btn-success"%>
-          <td><%= link_to 'join',user_teams_path(team: team.id,user: current_user),
-        class:"btn btn-sm btn-success float-right"%></td>
+           <%= link_to 'view',team_path(team.id),class:"btn btn-sm btn-success"%>
+
+          <td><%= link_to "Join", user_teams_path(team:team.id,user: current_user), {method: :post} %></td>
         
         </div>
     </div>
