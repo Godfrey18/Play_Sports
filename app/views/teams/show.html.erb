@@ -22,7 +22,7 @@
         <td><%= tu.email %></td>
         <td><%= tu.created_at.to_date %></td>
         <% if current_user %>
-        <td> <%= link_to 'Exit', user_team_path(tu.id)  ,class:"btn btn-sm btn-danger",method: :delete %>
+        <td> <%= link_to 'Exit', user_team_path(tu.id)  ,class:"btn btn-sm btn-danger",method: :delete,data:{confirm: "Are you sure?"} %>
           <% end %>
       </tr>
       <% end %>

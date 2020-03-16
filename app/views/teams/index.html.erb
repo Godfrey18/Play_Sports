@@ -1,5 +1,6 @@
 <div class="row">
 <%@teams.each do |team| %>
+
    <div class="col-lg-3 col-sm-3 col-6">
     <%=link_to team_path(team) do %>
      <div class="card mt-3">
@@ -8,9 +9,9 @@
           <h5 class="card-title list-inline"><%=team.users.count%></h5>
            <hr>
            <%= link_to 'view',team_path(team.id),class:"btn btn-sm btn-success"%>
-
-          <td><%= link_to "Join", user_teams_path(team:team.id,user: current_user), {method: :post} %></td>
-        
+  
+            <td><%= link_to "Join", user_teams_path(team:team.id,user: current_user),
+              class:"btn btn-sm btn-primary float-right",method: :post %></td> 
         </div>
     </div>
     <% end %>
