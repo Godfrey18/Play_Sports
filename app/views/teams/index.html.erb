@@ -8,7 +8,8 @@
           <h5 class="card-title list-inline"><%=team.id%></h5>
            <hr>
            <%= link_to 'view',team_path(team),class:"btn btn-sm btn-success"%>
-           <%= link_to 'join','',class:"btn btn-sm btn-success float-right"%>
+          <td><%= link_to 'join',user_teams_path(team: team.id,user: current_user),
+        class:"btn btn-sm btn-success float-right"%></td>
         
         </div>
     </div>

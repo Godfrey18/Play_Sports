@@ -7,24 +7,20 @@
         <th>PlayerId</th>
         <th>PlayerName</th>
         <th>Email</th>
+        <th>Joined</th>
+        <th>Actions</th>
       </tr>
     </thead>
     <tbody>
+      <%@teams.users.each do |tu|%>
       <tr>
-        <td>John</td>
-        <td>Doe</td>
-        <td>john@example.com</td>
+        <td><%= tu.first_name %></td>
+        <td><%= tu.last_name %></td>
+        <td><%= tu.email %></td>
+        <td><%= tu.created_at.to_date %></td>
+        <td> <%= link_to 'Exit', user_team_path(tu.id),class:"btn btn-sm btn-danger",method: :delete %>
       </tr>
-      <tr>
-        <td>Mary</td>
-        <td>Moe</td>
-        <td>mary@example.com</td>
-      </tr>
-      <tr>
-        <td>July</td>
-        <td>Dooley</td>
-        <td>july@example.com</td>
-      </tr>
+      <% end %>
     </tbody>
   </table>
 </div>

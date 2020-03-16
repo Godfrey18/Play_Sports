@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :user_teams, only: [:create,:destroy]
   root 'homes#index'
   devise_for :users
   resources :events
