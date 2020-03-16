@@ -1,0 +1,18 @@
+<div class="row">
+<%@teams.each do |team| %>
+   <div class="col-lg-3 col-sm-3 col-6">
+    <%=link_to team_path(team) do %>
+     <div class="card mt-3">
+        <div class="card-body">
+          <h2 class="card-title text-capitalize " ><%=team.team_name%></h5>
+          <h5 class="card-title list-inline"><%=team.id%></h5>
+           <hr>
+           <%= link_to 'view',team_path(team),class:"btn btn-sm btn-success"%>
+           <%= link_to 'join','',class:"btn btn-sm btn-success float-right"%>
+        
+        </div>
+    </div>
+    <% end %>
+   </div>
+<% end %>
+</div>

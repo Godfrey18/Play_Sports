@@ -4,6 +4,10 @@ class TeamsController < ApplicationController
    @teams= Team.new()
 	end
 
+	def index
+    @teams=Team.all
+	end
+
 def create
     @teams= Team.new(add_params)
     if @teams.save
