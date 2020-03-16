@@ -1,46 +1,27 @@
-<div class="container">
-  <h2>Modal Example</h2>
-  <!-- Button to Open the Modal -->
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-    Open modal
-  </button>
 
-  <!-- The Modal -->
-  <div class="modal" id="myModal">
-    <div class="modal-dialog">
-      <div class="modal-content">
-      
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <h4 class="modal-title">Create Team</h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        
-        <!-- Modal body -->
-        <div class="modal-body">
-         <%= form_for(@teams, :html => {class: "form-horizontal", role: "form"}) do |f| %>
-          <div class="form-group pt-2">
-              <%= f.label :name %>
-                <%= f.text_field :team_name, class: "form-control", placeholder: "TeamName", autofocus: true %>
-              </div>        
-        </div>
-        
-        <!-- Modal footer -->
-        <div class="modal-footer">
-          <div class ="form-group row">
-            
-          <div class ="col-md-6">
-             <%= f.submit(@teams.new_record? ? "Create" : "Update", class: 'btn btn-primary btn-sm') %>
-           </div>
-           <div class ="col-md-6">
-            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-          </div>
+<div class ="container mt-5">
+ 
+     <div class ="row">
+        <div class ="col-8">
+                <%= form_for(@teams,:html =>{class: "form-horizontal",role: "form"}) do |f|%>
+                   <div class="card text-center ">
+                      <div class="card-header bg-warning">
+                        Create Team
+                      </div>
+                       <div class="card-body col-6 ">
 
-         </div>
+                               <%= f.text_field :team_name,class: "form-control ml-5",placeholder:"Team Name",autofocus:true%>
+                                 <%= f.submit "Create Team",class:"btn btn-md btn-primary mt-2 " %>
+                             
+                        </div>
+                        <div class="card-footer text-muted bg-light">
+                            2 days ago
+                          </div>
+                   </div>
+                   
+                <% end %>
+
         </div>
-        <% end %>
-      </div>
     </div>
-  </div>
+
   
-</div>

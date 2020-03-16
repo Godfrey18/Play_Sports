@@ -1,26 +1,30 @@
-
-<div class ="container ml-5 mt-5">
-  <div class="card text-white bg-white mb-3" style="max-width: 18rem;">
-    <div class="card-header text-center text-capitalize text-dark"><%=@teams.team_name%></div>
-    <div class="card-body">
-      <h5 class="card-title  text-dark text-left text-capitalize">
-        <small>Game:</small><%=@teams.team_name%></h5>
-      <h5 class="card-title text-dark text-left"><small>Players:</small></h5>
-      <h5 class="card-title  text-dark text-left"><small>Game:</small></h5>
-      <hr>
-      <p class="card-text  text-dark text-left"><small></small></p>
-      <hr>
-        <div class ="form-group row">
-           <div class ="col-md-4">
-        <%=link_to "back",'',class:"btn btn-md btn-primary"%>
-          </div>
-          <div class ="col-md-4">
-        <%=link_to "Edit",'',class:"btn btn-md btn-warning"%>
-          </div>
-         <div class ="col-md-4">
-        <%=link_to "Delete",'',method: :delete,class:"btn btn-md btn-danger"%>
-          </div>
-      </div>
-    </div>
-  </div>
+<div class="container mt-5">
+  <h2>Hoverable Dark Table</h2>
+  <p>The .table-hover class adds a hover effect (grey background color) on table rows:</p>            
+  <table class="table table-dark table-hover">
+    <thead>
+      <tr>
+        <th>PlayerId</th>
+        <th>PlayerName</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+      </tr>
+      <tr>
+        <td>Mary</td>
+        <td>Moe</td>
+        <td>mary@example.com</td>
+      </tr>
+      <tr>
+        <td>July</td>
+        <td>Dooley</td>
+        <td>july@example.com</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
