@@ -11,6 +11,7 @@ class TeamsController < ApplicationController
 def create
     @teams= Team.new(add_params)
     if @teams.save
+    	@teams.user_teams.create(user:current_user, team:@teams)
     	flash[:notice] = "Team Created Sucessfull"
     	redirect_to @teams
 	end

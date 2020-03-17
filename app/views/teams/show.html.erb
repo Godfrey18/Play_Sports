@@ -11,9 +11,12 @@
         <th>PlayerName</th>
         <th>Email</th>
         <th>Joined</th>
-        <th> role</th>
         <th>Actions</th>
-      </tr>
+        <th> <%= link_to "Join", user_teams_path(team:@teams.id,user: current_user),
+              class:"btn btn-sm btn-primary float-right", id:"click",method: :post %>
+              </th>
+        </tr>
+        
     </thead>
     <tbody>
       <%@teams.users.each do |tu|%>
