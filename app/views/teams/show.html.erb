@@ -21,8 +21,11 @@
         <td><%= tu.last_name %></td>
         <td><%= tu.email %></td>
         <td><%= tu.created_at.to_date %></td>
-        <% if current_user %>
-        <td> <%= link_to 'Exit', user_team_path(tu.id)  ,class:"btn btn-sm btn-danger",method: :delete,data:{confirm: "Are you sure?"} %>
+        <% if current_user.email == tu.email %>
+        <td> <%= link_to 'Exit Team ', user_team_path(tu.id)  ,class:"btn btn-sm btn-danger",method: :delete,data:{confirm: "Are you sure?"} %>
+          <% else %>
+          <td><%= link_to 'View Profile', '' ,class:"btn btn-sm btn-primary" %>
+           </td>
           <% end %>
       </tr>
       <% end %>

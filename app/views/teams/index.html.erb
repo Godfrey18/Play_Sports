@@ -10,8 +10,13 @@
            <hr>
            <%= link_to 'view',team_path(team.id),class:"btn btn-sm btn-success"%>
   
-            <td><%= link_to "Join", user_teams_path(team:team.id,user: current_user),
+            <% if current_user.teams.where(team_name: team.team_name).exists? %>
+             <span class ="badge badge-primary",align="right"> Current Team </span>
+           
+              <% else %>
+              <td><%= link_to "Join", user_teams_path(team:team.id,user: current_user),
               class:"btn btn-sm btn-primary float-right",method: :post %></td> 
+              <% end %>
         </div>
     </div>
     <% end %>
