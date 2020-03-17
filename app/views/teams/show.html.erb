@@ -1,6 +1,6 @@
 <div class="container mt-5">
-  <h4>Teamname:<%=@teams.team_name.capitalize%></h4>
-  <h5> TotalPlayers : <%=  (!@teams.users.present?) ? "No Players in Current Team" : @teams.users.count %>  </h5>  
+  <h6>Teamname:<%=@teams.team_name.capitalize%></h6>
+  <h6> TotalPlayers : <%=  (!@teams.users.present?) ? "No Players in Current Team" : @teams.users.count %>  </h6>  
 
    
   
@@ -12,9 +12,11 @@
         <th>Email</th>
         <th>Joined</th>
         <th>Actions</th>
+        <% if !current_user.user_teams.present? %>
         <th> <%= link_to "Join", user_teams_path(team:@teams.id,user: current_user),
-              class:"btn btn-sm btn-primary float-right", id:"click",method: :post %>
+              class:"btn btn-sm btn-primary float-right",method: :post %>
               </th>
+              <% end %>
         </tr>
         
     </thead>
