@@ -46,8 +46,8 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <%= link_to 'Edit',edit_user_registration_path(current_user),
                   class:"dropdown-item" %>
-                   <%= link_to 'Delete Account', destroy_user_session_path(current_user),
-                  class:"dropdown-item",method: :delete if current_user %>
+                   <%= link_to 'View Account', user_path(current_user),
+                  class:"dropdown-item"if current_user %>
                   <a class="dropdown-item" href="#">Something else here</a>
                 </div>
               </li>

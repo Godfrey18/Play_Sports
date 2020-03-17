@@ -30,8 +30,10 @@
         
         <% if current_user.email == tu.email %>
         <td> <%= link_to 'Exit Team ', user_team_path(tu.id)  ,class:"btn btn-sm btn-danger",method: :delete,data:{confirm: "Are you sure?"} %>
+           <%= link_to 'View Profile', user_path(tu.id) ,class:"btn btn-sm btn-primary" %> 
+         </td>
           <% else %>
-          <td><%= link_to 'View Profile', '' ,class:"btn btn-sm btn-primary" %>
+          <td><%= link_to 'View Profile', user_path(tu.id) ,class:"btn btn-sm btn-primary" %>
            </td>
           <% end %>
       </tr>
