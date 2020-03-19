@@ -26,7 +26,8 @@ gem 'bootstrap', '~> 4.4.1'
 gem 'jquery-rails'
 gem 'devise-bootstrap-views', '~> 1.0'
 gem 'devise'
-gem 'pickadate-rails'
+gem 'bootstrap-datepicker-rails'
+gem 'hirb'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password

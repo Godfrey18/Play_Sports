@@ -1,1 +1,23 @@
 <h1> Index</h1>
+
+<div class="row">
+  
+<%@team.matches.each  do |match| %>
+  <% hometeams = Team.find(match.team_id)%>
+  <% awayteams = Team.find(match.away_team_id)%>
+   <div class="col-lg-3 col-sm-3 col-6">
+     <div class="card mt-3">
+        <div class="card-body">
+          <h4 class="card-title text-center text-capitalize " ></h5>
+            <hr>
+         <span class ="badge badge-primary "><%=hometeams.team_name%> </span>
+         <span class ="badge badge-primary "><%=awayteams.team_name%></span>
+          <span class ="badge badge-primary "><%=match.event.name%></span>
+          <span class ="badge badge-primary "><%=match.match_date%></span>
+           <hr>
+           
+        </div>
+    </div>
+   </div>
+<% end %>
+</div>

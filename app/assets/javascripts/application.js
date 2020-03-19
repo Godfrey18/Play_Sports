@@ -14,12 +14,10 @@
 //= require jquery3
 //= require popper
 //= require bootstrap
+//= require bootstrap-datepicker
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
-//= require pickadate/picker
-//= require pickadate/picker.date
-//= require pickadate/picker.time
 //= require_tree .
 
 $('.datepicker').pickadate()

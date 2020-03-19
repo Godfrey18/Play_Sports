@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_18_080501) do
+ActiveRecord::Schema.define(version: 2020_03_19_121812) do
 
   create_table "events", force: :cascade do |t|
     t.string "name"
@@ -26,8 +26,8 @@ ActiveRecord::Schema.define(version: 2020_03_18_080501) do
     t.integer "away_team_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "match_date"
     t.integer "event_id"
+    t.date "match_date"
     t.index ["away_team_id"], name: "index_matches_on_away_team_id"
     t.index ["team_id"], name: "index_matches_on_team_id"
   end

@@ -1,1 +1,20 @@
 <h1> Show</h1>
+
+
+
+<div class="card text-center col-6">
+  <div class="card-header">
+    <%= @t.event.name %>
+
+  </div>
+  <div class="card-body">
+  	<h5 class ="card-text"> <span class ="badge badge-primary">HomeTeam</span> 
+  		<span class ="badge badge-primary">Away Team</span> 
+    <h2 class="card-title"><span class ="badge badge-primary"> <%= @team.team_name %></span> <span class ="badge badge-danger"> <%= @team_names.team_name %></span> </h2>
+    <p class="card-text"><label>Match Date</label><%=@t.match_date%></p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+  <div class="card-footer text-muted">
+    2 days ago
+  </div>
+</div>
