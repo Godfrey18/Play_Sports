@@ -1,0 +1,57 @@
+<h1> Matches <%= @teams%></h1>
+
+<h1></h1>
+<div class="container ml-5 mt-3">
+
+<div class ="row mt-5 ml-5">
+	<div class ="col-9 border border-dark pt-4 pl-4 pr-4 pb-3 bg-white  ">
+          <h4 align="center">  </h4>
+          <hr>
+		<%= form_for(@matches, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+
+		<div class="form-group">
+			
+				<%= f.label :HomeTeam %>
+					<%= f.text_field :team_id, value:params[:team_id], class: "form-control", placeholder: "Total Players", type:"hidden" %>
+		</div>
+		<div class="form-group pt-2">
+
+		<%= f.label :AwayTeam %>
+            <%@teams= Team.all%>
+            <%@awayteams = @teams.where.not(id:params[:team_id])%>
+			<%=f.collection_select(:away_team_id , @awayteams, :id, :team_name,
+			 options ={:prompt => "-Select Oppenanent Team"})%>
+		</div>
+
+		 <div class="form-controls">
+			<div class="controls">
+		<%= f.label :Event %>
+			<%=f.collection_select(:event_id , Event.all, :id, :name, options ={:prompt => "-Select a Event"})%>
+
+		</div>
+	</div>
+
+		
+
+		<div class="form-group col-4">
+
+		<%= f.label :MatchDate %>
+			<%= f.text_field :match_date, class: "form-control datepicker"%>
+		</div>
+	
+
+
+		<div class="form-group row">
+
+		<div class="col-sm-offset-2 col-sm-8">
+
+		<%= f.submit "Update" %>
+
+		</div>
+
+		</div>
+
+<% end %>
+</div>
+</div>
+</div>

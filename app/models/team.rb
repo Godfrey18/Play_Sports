@@ -1,6 +1,6 @@
 class Team < ApplicationRecord
 before_save { self.team_name = team_name.capitalize }
-has_many :user_teams
+has_many :user_teams, dependent:  :destroy
 has_many :users, through: :user_teams
 
 has_many :matches

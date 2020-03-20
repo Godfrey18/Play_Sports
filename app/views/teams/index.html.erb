@@ -9,7 +9,10 @@
           <h4 class="card-title text-center text-capitalize " ><%=team.team_name%></h5>
             <hr>
          <span class ="badge badge-primary ">Members: <%=team.users.count%> </span>
-         <span class ="badge badge-primary "> Created_by: <%=  %></span>
+                     
+         <span class ="badge badge-primary "> Created_by: <% %>
+           
+         </span>
            <hr>
            <%= link_to 'view',team_path(team.id),class:"btn btn-sm btn-success"%>
   
