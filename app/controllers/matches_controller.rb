@@ -1,9 +1,9 @@
 class MatchesController < ApplicationController
 
-
      def index
-  @match = Match.all
-  
+     	@matches = Match.all
+    @team = Team.find(params[:team_id])
+    @h_a_matches = @team.matches
      end
 
 
@@ -12,16 +12,12 @@ class MatchesController < ApplicationController
 	end
 
 	def create
-		
     @matches =  Match.new(add_params)
     @team = Team.find(params[:match][:team_id])
     teamid = params[:team_id]
-    	
 		if @matches.save
-			
-			flash[:notice] = "Matches Created Sucessfully"
-			 
-			redirect_to team_match_path(params[:match][:team_id],@matches)
+		flash[:notice] = "Matches Created Sucessfully"	 
+			redirect_to team_matches_path(params[:match][:team_id])
 		else
 	         flash[:alert] = "Matches Created failed"
 			render 'matches/new'
@@ -29,10 +25,10 @@ class MatchesController < ApplicationController
 	end
 
 	def show
-	  @team = Team.find(params[:team_id])
-	  puts "==============="
-    	puts @team.id
-	 
+	  
+	 @matches = Match.find(params[:id])
+	 @teams = Team.find(@matches.team_id)
+	 @h_a_matches = @teams.matches
 
 	end
 

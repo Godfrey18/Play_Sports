@@ -1,20 +1,16 @@
 <h1> Show</h1>
 
-<h2 class ="card-header  badge-primary text"><%=@team.team_name.capitalize %></h2>
-<div class="row">
-  <%@team.matches.each  do |match| %>
-  <% hometeams = Team.find(match.team_id)%>
-  <% awayteams = Team.find(match.away_team_id)%>
-  <div class="col-lg-4 col-sm-4 col-4">
-      <div class="card text-center">
+ <div class="col-lg-4 col-sm-4 col-4">
+      <div class="card text-center border-danger">
         <div class="card-header">
           <ul class="nav nav-tabs card-header-tabs">
             <li class="nav-item">
               <a class="nav-link active" href="#">Records</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">View</a>
-            </li>
+           
+ 
+          </li>
             <li class="nav-item">
               <a class="nav-link " href="#">Disabled</a>
             </li>
@@ -24,19 +20,18 @@
           <h4 class="card-title text-center text-capitalize " ></h4>
             <span class ="badge  badge-primary">HomeTeam</span> 
              <span class ="badge badge-danger ml-5">AwayTeam</span>
-               <span class ="badge badge-primary mt-3 "><%=hometeams.team_name.capitalize%> </span>
+
+               <span class ="badge badge-primary mt-3 ">@teams</span>
                <span class ="ml-5">vs</span> 
-               <span class ="badge badge-primary ml-5 mt-3"><%=awayteams.team_name.capitalize%></span>
+               <span class ="badge badge-primary ml-5 mt-3"></span>
                <hr>
                <label class ="badge badge-dark ml-auto"> Event </label>
-          <span class ="badge badge-primary ml-5"><%=match.event.name%></span>
+          <span class ="badge badge-primary ml-5"></span>
           <hr>
                <label class ="badge badge-dark"> MatchDate </label>
-          <span class ="badge badge-primary ml-5"><%=match.match_date%></span>
+          <span class ="badge badge-primary ml-5"></span>
            <hr>
            
         </div>
       </div>
   </div>
-<% end %>
-</div>
