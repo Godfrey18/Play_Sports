@@ -8,8 +8,6 @@
               <a class="nav-link active" href="#">Records</a>
             </li>
             <li class="nav-item">
-           
- 
           </li>
             <li class="nav-item">
               <a class="nav-link " href="#">Disabled</a>
@@ -23,15 +21,15 @@
 
                <span class ="badge badge-primary mt-3 ">
                 <%=@match.home_team.team_name%></span>
-               <span class ="ml-5">vs</span> 
-               <span class ="badge badge-primary ml-5 mt-3">
+               <span class ="ml-3">vs</span> 
+               <span class ="badge badge-primary ml-3 mt-3">
                  <%=@match.away_team.team_name%></span>
                <hr>
-               <label class ="badge badge-dark ml-auto"><%=@event.name%> </label>
-          <span class ="badge badge-primary ml-5"></span>
+               <label class ="badge badge-dark ml-auto">Event </label>
+          <span class ="badge badge-primary ml-5"><%=@event.name%></span>
           <hr>
-               <label class ="badge badge-dark"> <%=@match.match_date%> </label>
-          <span class ="badge badge-primary ml-5"></span>
+               <label class ="badge badge-dark"> MatchDate </label>
+          <span class ="badge badge-primary ml-5"><%=@match.match_date%></span>
            <hr>
            
         </div>

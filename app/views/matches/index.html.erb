@@ -27,19 +27,19 @@
                  <span class ="badge badge-danger ml-5">AwayTeam</span>
                    <span class ="badge badge-primary mt-3 ">
                     <%=match.home_team.team_name.capitalize%> </span>
-                   <span class ="ml-5">vs</span> 
-                   <span class ="badge badge-primary ml-5 mt-3"> 
+                   <span class ="ml-2">vs</span> 
+                   <span class ="badge badge-danger ml-3 mt-2 "> 
                     <%=match.away_team.team_name.capitalize%></span>
                    <hr>
 
                     <%@event = Event.find(match.event_id)%>
-                   <label class ="badge badge-dark ml-auto"> Event </label>
+                   <label class ="badge badge-dark ml- 0"> Event </label>
               <span class ="badge badge-primary ml-5">
                 <%= @event.name %>
               </span>
               <hr>
                    <label class ="badge badge-dark"> MatchDate </label>
-              <span class ="badge badge-primary ml-5"></span>
+              <span class ="badge badge-primary ml-5"><%=match.match_date%></span>
                <hr>
                
             </div>
