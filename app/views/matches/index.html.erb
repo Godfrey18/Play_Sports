@@ -1,46 +1,49 @@
 <h1> Index</h1>
 
-<h2 class ="card-header  badge-primary text"><%= %></h2>
-<div class="row">
-  <%@matches.each  do |match| %>
-  <div class="col-lg-4 col-sm-4 col-4">
-      <div class="card text-center border-danger">
-        <div class="card-header">
-          <ul class="nav nav-tabs card-header-tabs">
-            <li class="nav-item">
-              <a class="nav-link active" href="#">Records</a>
-            </li>
-            <li class="nav-item">
-           
-           <%= link_to "Show",team_match_path(match.team_id,match),class:"nav-link"%>
-          </li>
-            <li class="nav-item">
-              <a class="nav-link " href="#">Disabled</a>
-            </li>
-          </ul>
-        </div>
-        <div class="card-body">
-          <h4 class="card-title text-center text-capitalize " ></h4>
-            <span class ="badge  badge-primary">HomeTeam</span> 
-             <span class ="badge badge-danger ml-5">AwayTeam</span>
-               <span class ="badge badge-primary mt-3 ">
-                <%=match.home_team.team_name.capitalize%> </span>
-               <span class ="ml-5">vs</span> 
-               <span class ="badge badge-primary ml-5 mt-3"> 
-                <%=match.away_team.team_name.capitalize%></span>
+<%if @home_team.empty?%>
+<h2 class ="card-header  badge-primary text">No Matches </h2>
+<% else %>
+    <div class="row">
+      <% @home_team.each  do |match| %>
+      <div class="col-lg-4 col-sm-4 col-4">
+          <div class="card text-center border-danger">
+            <div class="card-header">
+              <ul class="nav nav-tabs card-header-tabs">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">Records</a>
+                </li>
+                <li class="nav-item">
+               
+               <%= link_to "Show",team_match_path(match.team_id,match),class:"nav-link"%>
+              </li>
+                <li class="nav-item">
+                  <a class="nav-link " href="#">Disabled</a>
+                </li>
+              </ul>
+            </div>
+            <div class="card-body">
+              <h4 class="card-title text-center text-capitalize " ></h4>
+                <span class ="badge  badge-primary">HomeTeam</span> 
+                 <span class ="badge badge-danger ml-5">AwayTeam</span>
+                   <span class ="badge badge-primary mt-3 ">
+                    <%=match.home_team.team_name.capitalize%> </span>
+                   <span class ="ml-5">vs</span> 
+                   <span class ="badge badge-primary ml-5 mt-3"> 
+                    <%=match.away_team.team_name.capitalize%></span>
+                   <hr>
+                   
+                   <label class ="badge badge-dark ml-auto"> Event </label>
+              <span class ="badge badge-primary ml-5">
+                
+              </span>
+              <hr>
+                   <label class ="badge badge-dark"> MatchDate </label>
+              <span class ="badge badge-primary ml-5"><%=match.match_date%></span>
                <hr>
-               <%event = Event.find(match.event_id)%>
-               <label class ="badge badge-dark ml-auto"> Event </label>
-          <span class ="badge badge-primary ml-5"><%=event.name%>
-            
-          </span>
-          <hr>
-               <label class ="badge badge-dark"> MatchDate </label>
-          <span class ="badge badge-primary ml-5"><%=match.match_date%></span>
-           <hr>
-           
-        </div>
+               
+            </div>
+          </div>
       </div>
-  </div>
+    <% end %>
+    </div>
 <% end %>
-</div>
