@@ -2,8 +2,7 @@ class MatchesController < ApplicationController
 
  def index
 	@matches = Match.all
-     @home_team = @matches.where(team_id:params[:team_id])
-
+    @home_team = @matches.where(team_id:params[:team_id])
 	
  end
 

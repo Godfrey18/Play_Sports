@@ -23,7 +23,7 @@ class Match < ApplicationRecord
   end
 
   def inverse_match_options
-    { away_team_id: team_id, team_id: away_team_id }
+    { away_team_id: team_id, team_id: away_team_id,event_id: event_id,match_date:match_date }
   end
 
 end
