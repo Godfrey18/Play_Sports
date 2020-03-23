@@ -19,7 +19,7 @@ def create
 end
 	def show
 	@teams= Team.find(params[:id])
-
+   
 	end
 
 	def edit

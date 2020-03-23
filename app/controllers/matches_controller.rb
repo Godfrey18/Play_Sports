@@ -1,17 +1,16 @@
 class MatchesController < ApplicationController
 
-     def index
-     	@matches = Match.all
-    @team = Team.find(params[:team_id])
-    @h_a_matches = @team.matches
-     end
+ def index
+	@matches = Match.all
+	
+ end
 
 
-	def new
+def new
      @matches = Match.new
-	end
+end
 
-	def create
+def create
     @matches =  Match.new(add_params)
     @team = Team.find(params[:match][:team_id])
     teamid = params[:team_id]
@@ -22,21 +21,18 @@ class MatchesController < ApplicationController
 	         flash[:alert] = "Matches Created failed"
 			render 'matches/new'
 		end 
-	end
+end
 
-	def show
-	  
-	 @matches = Match.find(params[:id])
-	 @teams = Team.find(@matches.team_id)
-	 @h_a_matches = @teams.matches
+def show	  
+	 @match = Match.find(params[:id])
+      @event = Event.find(@match.event_id)
+end
 
-	end
-
-	def edit
+def edit
     @matches = params[:id]
-	end
+end
 
-	def update
+def update
     @matches = params[:id]
     @matches.update(add_params)
      if @matches
@@ -46,14 +42,14 @@ class MatchesController < ApplicationController
           flash[:notice] = "failed"
      end
 
-	end
+end
 
-	private
 
-  def add_params
+private
+
+def add_params
   params.require(:match).permit(:team_id,:away_team_id,:event_id,:match_date)
-  end 
-
+end 
 
 
 end

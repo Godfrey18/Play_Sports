@@ -1,5 +1,5 @@
 class Event < ApplicationRecord
-  has_many :matches
+  belongs_to :team
  
 
  validates :name,:types,:no_players,presence:true

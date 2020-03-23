@@ -30,14 +30,21 @@
                   <a class="dropdown-item" href="#">Action</a>
                   <a class="dropdown-item" href="#">Another action</a>
                   <div class="dropdown-divider"></div>
-
                 </div>
               </li>
+              <%if current_user %>
+              <% current_user.teams.each do |uteam| %>
+
+              <li class="nav-item active">
+               
+                 <%= link_to 'MyTeam',team_path(uteam.id),class:"nav-link" %>
+
+              </li>
+
+              <% end %>
+                <% end %>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
+            
             <ul class="navbar-nav mr-auto ">
                 <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle ml-5" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
