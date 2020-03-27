@@ -8,9 +8,8 @@
       <h5 class="card-title  text-dark text-left text-capitalize">
       <h5 class="card-title text-dark text-left"><small>email:<%=@user.email%></small></h5>
       <h5 class="card-title  text-dark text-left"><small>current_team:</small>
-      	<%@user.teams.each do| t |%>
-      	<%=t.team_name%>
-      	<%end %></h5>
+      	<%= (@user.team.present?) ? @user.team.team_name : "No Team" %>
+      	</h5>
       <hr>
       <p class="card-text  text-dark text-left"><small> Teams</small><%=%>.</p>
       <hr>

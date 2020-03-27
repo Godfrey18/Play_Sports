@@ -2,7 +2,7 @@
   <h6>Teamname:<%=@teams.team_name.capitalize%></h6>
   <h6> TotalPlayers : <%=  (!@teams.users.present?) ? "No Players in Current Team" : @teams.users.count %>  </h6>  
 
-   <% if current_user.teams.where(team_name: @teams.team_name).exists? %>
+   <% if current_user.team.present? %>
       <%= link_to "Create Match",  new_team_match_path(@teams.id),
                   class:"btn btn-sm btn-primary float-right"%>
       <% end %> 
@@ -17,7 +17,7 @@
         <th>Email</th>
         <th>Joined</th>
         <th>Actions</th>
-        <% if !current_user.user_teams.present? %>
+        <% if !current_user.user_team.present? %>
         <th> <%= link_to "Join", user_teams_path(team:@teams.id,user: current_user),
               class:"btn btn-sm btn-primary float-right",method: :post %>
               </th>

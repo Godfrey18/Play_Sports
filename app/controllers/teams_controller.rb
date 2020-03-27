@@ -8,7 +8,7 @@ class TeamsController < ApplicationController
     @teams=Team.all
 	end
 
-def create
+   def create
     @teams= Team.new(add_params)
     if @teams.save
     	@teams.user_teams.create(user:current_user, team:@teams)

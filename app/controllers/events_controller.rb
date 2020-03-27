@@ -1,13 +1,11 @@
 class EventsController < ApplicationController
  
   def new
-
   @events = Event.new
-
   end 
 
   def index
-@events = Event.all
+  @events = Event.all
   end
 
   def create
@@ -15,7 +13,10 @@ class EventsController < ApplicationController
 	if @events.save
 	   flash[:notice] = "Event Created Sucessfully"
 	   redirect_to @events
+   else
+    flash[:alert] = "Event Created failed"
 	  end
+
 	end
 
   def show
@@ -32,7 +33,7 @@ class EventsController < ApplicationController
     if @events.update(add_params)
     flash[:notice]="updated Sucessfully"
     redirect_to @events
-      end
+    end
   end
 
   def destroy

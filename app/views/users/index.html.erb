@@ -1,0 +1,33 @@
+<h1> Players</h1>
+<%=@users%>
+
+<table class="table table-bordered table-hover table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Userid</th>
+      <th scope="col">Name</th>
+      <th scope="col">email</th>
+      <th scope="col">Team</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+  	<%@users.each do |user|%>
+    <tr>
+      <th scope="row"><%=user.id%></th>
+      <td><%=user.first_name%></td>
+       <td><%=user.email%></td>
+        <td><%=(user.team.present?) ? user.team.team_name : "Not assigned to Any Team"%>
+        
+        </td>
+  
+         <td>
+         	<%=link_to "Invite ",'',class:"btn btn-sm btn-primary" if !user.team.present? && current_user.team.present? %>
+         	
+         <%=link_to "  Profile",user_path(user.id),class:" ml-3 btn btn-sm btn-primary "%>
+         </td>
+    </tr>
+   
+   <%end%>
+  </tbody>
+</table>

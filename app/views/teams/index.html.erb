@@ -16,7 +16,7 @@
            <hr>
            <%= link_to 'view',team_path(team.id),class:"btn btn-sm btn-success"%>
   
-            <% if current_user.teams.where(team_name: team.team_name).exists? %>
+            <% if current_user.team.present? %>
              <span class ="badge badge-primary ml-3",align="right"> Current Team </span>
            
               <% else %>

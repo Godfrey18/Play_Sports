@@ -7,6 +7,8 @@
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+               <%= link_to "Users",users_path,class:"nav-link" %>  </li>
               <li class="nav-item active">
                 <a class="nav-link" href="#">Matches <span class="sr-only">(current)</span></a>
               </li>
@@ -22,26 +24,37 @@
                 </div>
               </li>
 
-              <li class="nav-item dropdown">
+              <!-- <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Sports
+                  Matches
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <div class="dropdown-divider"></div>
-                </div>
-              </li>
-              <%if current_user %>
-              <% current_user.teams.each do |uteam| %>
-
+                  <%@Events = Event.all %>
+                  <%@totalmatches = Match.all.count %>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <% @Events.each do |event| %>
+                         <%if event.matches.count > 1  && current_user%>
+                          <% @teamid=current_user.teams%>
+                             <%= link_to team_matches_path(@teamid),
+                             class:"dropdown-item" do %>
+                              <%=event.name %>
+                              Matches
+                              <span class ="badge badge-primary ml-4">
+                                <%=event.matches.count / @totalmatches %></span>
+                             <% end %>
+                            <div class="dropdown-divider"></div>
+                             <% end %>
+                           <% end %>
+                         
+                    </div>
+              </li> -->
+              <%if current_user && current_user.team  %>
+             
               <li class="nav-item active">
                
-                 <%= link_to 'MyTeam',team_path(uteam.id),class:"nav-link" %>
+                 <%= link_to 'MyTeam','',
+                 class:"nav-link" %>
 
               </li>
-
-              <% end %>
                 <% end %>
             </ul>
             

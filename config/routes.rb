@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  resources :matches
+ 
   resources :user_teams, only: [:create,:destroy]
   root 'homes#index'
  devise_for :users, :path_prefix => 'd'
-resources :users, :only => [:show]
+resources :users, :only => [:show,:index]
   resources :events
   resources :teams do
   resources :matches 

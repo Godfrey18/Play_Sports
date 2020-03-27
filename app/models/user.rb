@@ -1,6 +1,7 @@
 class User < ApplicationRecord
-has_many :user_teams,dependent: :destroy
-has_many :teams, through: :user_teams
+	
+has_one :user_team, dependent: :destroy
+has_one :team, through: :user_team
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
